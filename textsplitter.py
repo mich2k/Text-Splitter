@@ -14,10 +14,10 @@ def main():
     i = k = 0
     cont = 1
     for line in fr:
-        i += 1
+        totlines += 1
     print("Found " + str(i) + " lines.")
     part = int(input("In how many partitions do you want to split the file: "))
-    val = int(i/part)
+    val = int(totlines/part)
     fr.seek(0, 0)
     while (cont <= part):
         f = open(noext_filename + "-part-" + str(cont) + ext, "w")
