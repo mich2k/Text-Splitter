@@ -15,7 +15,7 @@ def main():
     cont = 1
     for line in fr:
         i += 1
-    print(i)
+    print("Found " + str(i) + " lines.")
     part = int(input("In how many partitions do you want to split the file: "))
     val = int(i/part)
     fr.seek(0, 0)
