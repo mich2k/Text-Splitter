@@ -12,9 +12,14 @@ the Large File GitHub limit
     python3.X textsplitter.py
   ```
 
-  you can check you python version running:
+  you can check your python version by running:
+  
+    ```
     python3 -V
-  if this is not working means that you are running python 2.X and this script won't work
+    ```
+
+  if this is not working means that you are running python 2.X
+ 
 
 #  Dependencies
     - Python 3.x
