@@ -31,8 +31,11 @@ def main():
     ftmp.seek(0, 0)
     print("Found " + str(totlines) + " lines.")
     part = int(input("In how many partitions do you want to split the file: "))
-    if(part > totlines):
-        print("Error")
+    if(part>totlines != 0):
+        print("Error: partitions greater than totlines!")
+        return
+    if(totlines%part != 0):
+        print("Error: partitions number has to be a multiple of your total file lines!")
         return
     val = int(totlines/part)
     fr.seek(0, 0)
