@@ -29,7 +29,7 @@ def main():
             k += 1
         f.close()
         cont += 1
-
+    fr.close()
 
 if(__name__ == "__main__"):
     main()
