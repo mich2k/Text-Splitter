@@ -6,14 +6,13 @@ import pathlib
 def main():
     print("Remember to add file extension   (.log, .txt..) ")
     src_filename = input("file name: ")    # custom input
-    # src_filename = "../rockyou_utf8.inp"  # hard coding
+    # src_filename = "your_text_file.log"  # hard coding
     fr = open(src_filename, "r")
     path = str(pathlib.Path().parent.absolute()) + "/" + src_filename
     noext_filename = Path(path).resolve().stem
     ext = str(pathlib.Path(src_filename).suffix)
-    i = 0
+    i = k = 0
     cont = 1
-    k = 0
     for line in fr:
         i += 1
     print(i)
