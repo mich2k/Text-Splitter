@@ -18,7 +18,7 @@ the Large File GitHub limit
     python3 -V
     
 
-  if this is not working means that you are running python 2.X
+  if this is not working means that you are running python 2.X (or you have not python installed on your device)
  
 
 #  Dependencies
