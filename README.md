@@ -9,7 +9,7 @@ the Large File GitHub limit
   in order to make this work, run in the shell:
   
   ```
-    python3.X textsplitter.py
+  python3.X textsplitter.py
   ```
 
   you can check your python version by running:
@@ -22,4 +22,4 @@ the Large File GitHub limit
  
 
 #  Dependencies
-    - Python 3.x
+     Python 3.x
