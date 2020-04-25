@@ -27,3 +27,4 @@ the Large File GitHub limit
 # To-Do
   - Add Size-Based partitions option
   - Add progress percentage
+  - Add option to ignore empty lines
