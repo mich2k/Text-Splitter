@@ -9,7 +9,7 @@ def main():
     # src_filename = "your_text_file.log"  # hard coding
     fr = open(src_filename, "r")
     ch = input(
-        "Would you like to exclude whitespaces\whitelines?\nSuggested 'y'\n[y\\n]    ")
+        "Would you like to exclude whitespaces\\whitelines?\nSuggested 'y'\n[y\\n]    ")
     if(not(ch == 'y' or ch == 'n')):
         print("Error")
         return
@@ -18,7 +18,7 @@ def main():
     ext = str(pathlib.Path(src_filename).suffix)
     if(ch == 'y'):
         ftmp = tempfile.TemporaryFile(mode='w+')
-    i = k = totlines = 0
+    k = totlines = 0
     cont = 1
     for line in fr:
         if(ch == 'y' and not(line.isspace())):
@@ -27,6 +27,7 @@ def main():
             continue
         elif(ch == 'n'):
             totlines += 1
+    ftmp.seek(0,0)
     for l in ftmp:
         print(l)
     print("Found " + str(totlines) + " lines.")
