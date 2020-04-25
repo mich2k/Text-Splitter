@@ -21,7 +21,7 @@ def main():
     fr.seek(0, 0)
     while (cont <= part):
         f = open(noext_filename + "-part-" + str(cont) + ext, "w")
-        while(k < val*cont):
+        while(k <= val*cont):
             line = str(fr.readline())
             if not line:
                 break
