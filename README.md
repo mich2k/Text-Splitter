@@ -7,8 +7,11 @@ the Large File GitHub limit
 
 # How To
   in order to make this work, run in the shell:
+  
+  ```
     python3.X textsplitter.py
-    
+  ```
+
   you can check you python version running:
     python3 -V
   if this is not working means that you are running python 2.X and this script won't work
