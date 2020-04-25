@@ -15,11 +15,11 @@ the Large File GitHub limit
   you can check your python version by running:
   
    
-    python3 -V
+  python3 -V
     
 
   if this is not working means that you are running python 2.X
  
 
 #  Dependencies
-     Python 3.x
+  Python 3.x
