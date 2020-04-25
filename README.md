@@ -23,3 +23,7 @@ the Large File GitHub limit
 
 #  Dependencies
     Python 3.x
+
+# To-Do
+  - Add Size-Based partitions option
+  - Add progress percentage
