@@ -29,8 +29,6 @@ def main():
         elif(ch == 'n'):
             totlines += 1
     ftmp.seek(0, 0)
-    #for l in ftmp:
-    #    print(l)
     print("Found " + str(totlines) + " lines.")
     part = int(input("In how many partitions do you want to split the file: "))
     if(part > totlines):
@@ -45,14 +43,16 @@ def main():
             if(ch == 'n'):
                 f.write(str(fr.readline()))
             else:
-               f.write(str(ftmp.readline()))
-            k+=1
+                f.write(str(ftmp.readline()))
+            k += 1
         f.close()
         cont += 1
-        val*=cont
+        val *= cont
     fr.close()
     if(ch == 'y'):
         ftmp.close()
     return
+
+
 if(__name__ == "__main__"):
     main()
