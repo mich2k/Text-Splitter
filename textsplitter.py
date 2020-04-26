@@ -1,4 +1,6 @@
 
+#!/usr/bin/python3
+
 from pathlib import Path
 import pathlib
 import tempfile
