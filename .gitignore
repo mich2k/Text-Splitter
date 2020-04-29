@@ -130,3 +130,6 @@ dmypy.json
 
 # Input files
 *.inp
+
+# VScode Folder
+.vscode
