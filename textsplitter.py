@@ -1,5 +1,5 @@
 
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 from pathlib import Path
 import pathlib
@@ -64,8 +64,6 @@ def inputf():
 def main():
     select, reading_stream, noext_filename, ext, ftmp = inputf()
     part, totlines = partitions(reading_stream, select, ftmp, 0)
-    val = int(totlines/part)
-    k = 0
     cont = 1
     reading_stream.seek(0, 0)
     if(select == 'y'):
