@@ -5,6 +5,7 @@ from pathlib import Path
 import pathlib
 import tempfile
 
+
 def print_mult(x, MAX):
     cont = 0
     arr = set()
