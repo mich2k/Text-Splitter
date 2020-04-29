@@ -3,18 +3,20 @@
 
 from pathlib import Path
 import pathlib
+import tempfile
 
 def print_mult(x, MAX):
     cont = 0
-    arr=set()
-    for i in range (2,x+1):
-        if(x%i==0):
-            cont+=1
+    arr = set()
+    for i in range(2, x+1):
+        if(x % i == 0):
+            cont += 1
             arr.add(i)
             if(cont > MAX):
                 break
     print(arr)
     return
+
 
 def partitions(reading_stream, select, ftmp, totlines):
     # looking how many lines are
@@ -26,18 +28,19 @@ def partitions(reading_stream, select, ftmp, totlines):
             totlines += 1
     if(select == 'y'):
         ftmp.seek(0, 0)
-    MAX = 15 #  maximum number of suggested partitions
+    MAX = 15  # maximum number of suggested partitions
     print("Found " + str(totlines) + " lines.")
     print("\nHere you are some suggested legit partition size\\s to use: ")
-    print_mult(totlines,MAX)
+    print_mult(totlines, MAX)
     part = int(input("\nIn how many partitions do you want to split the file? "))
-    if(part>totlines != 0):
+    if(part > totlines != 0):
         print("Error: partitions greater than totlines!")
         quit()
-    if(totlines%part != 0):
+    if(totlines % part != 0):
         print("Error: partitions number has to be a multiple of your total file lines!")
         quit()
     return part, totlines
+
 
 def inputf():
     print("Remember to add file extension   (.log, .txt..) ")
@@ -57,10 +60,9 @@ def inputf():
     else:
         return select, reading_stream, noext_filename, ext, False
 
+
 def main():
     select, reading_stream, noext_filename, ext, ftmp = inputf()
-    if (select == 'y'):
-        import tempfile
     part, totlines = partitions(reading_stream, select, ftmp, 0)
     val = int(totlines/part)
     k = 0
@@ -68,17 +70,18 @@ def main():
     reading_stream.seek(0, 0)
     if(select == 'y'):
         ftmp.seek(0, 0)
-    for cont in range (part+1):
+    linestoprint = int(totlines / part)
+    for cont in range(1, part+1):
         f = open(noext_filename + "-part-" + str(cont) + ext, "w")
-        while(k < val):
+        for k in range(linestoprint):
             if(select == 'n'):
                 line = str(reading_stream.readline())
                 f.write(line)
             else:
-                f.write(str(ftmp.readline()))
-            k += 1
+                line = str(ftmp.readline())
+                f.write(line)
         f.close()
-        val *= cont
+        k = 0
     reading_stream.close()
     if(select == 'y'):
         ftmp.close()
