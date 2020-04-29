@@ -3,7 +3,6 @@
 
 from pathlib import Path
 import pathlib
-import tempfile
 
 def print_mult(x, MAX):
     cont = 0
@@ -60,6 +59,8 @@ def inputf():
 
 def main():
     select, reading_stream, noext_filename, ext, ftmp = inputf()
+    if (select == 'y'):
+        import tempfile
     part, totlines = partitions(reading_stream, select, ftmp, 0)
     val = int(totlines/part)
     k = 0
@@ -67,16 +68,16 @@ def main():
     reading_stream.seek(0, 0)
     if(select == 'y'):
         ftmp.seek(0, 0)
-    while (cont <= part):
+    for cont in range (part+1):
         f = open(noext_filename + "-part-" + str(cont) + ext, "w")
         while(k < val):
             if(select == 'n'):
-                f.write(str(reading_stream.readline()))
+                line = str(reading_stream.readline())
+                f.write(line)
             else:
                 f.write(str(ftmp.readline()))
             k += 1
         f.close()
-        cont += 1
         val *= cont
     reading_stream.close()
     if(select == 'y'):
