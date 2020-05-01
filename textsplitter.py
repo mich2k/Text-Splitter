@@ -1,5 +1,5 @@
 
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from pathlib import Path
 import pathlib
@@ -73,12 +73,14 @@ def main():
     for cont in range(1, part+1):
         f = open(noext_filename + "-part-" + str(cont) + ext, "w")
         for k in range(linestoprint):
+            progress = float((cont) / part) * 100
             if(select == 'n'):
                 line = str(reading_stream.readline())
                 f.write(line)
             else:
                 line = str(ftmp.readline())
                 f.write(line)
+            print("Progress: " + "%2.f" % progress + "%")
         f.close()
         k = 0
     reading_stream.close()
