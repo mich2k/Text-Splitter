@@ -12,9 +12,10 @@ the Large File GitHub limit
   python3.X textsplitter.py
   ```
   or
-    ```
+  
+  ```
   ./textsplitter.py
-    ```
+  ```
 
   you can check your python version by running:
   
