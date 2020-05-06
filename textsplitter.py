@@ -71,7 +71,7 @@ def main():
     linestoprint = int(totlines / part)
     for cont in range(1, part+1):
         f = open(noext_filename + "-part-" + str(cont) + ext, "w")
-        for k in range(linestoprint):
+        while (k<linestoprint):
             progress = float((cont) / part) * 100
             if(select == 'n'):
                 line = str(reading_stream.readline())
@@ -80,6 +80,7 @@ def main():
                 line = str(ftmp.readline())
                 f.write(line)
             print("Progress: " + "%2.f" % progress + "%")
+            k+=1
         f.close()
         k = 0
     reading_stream.close()
